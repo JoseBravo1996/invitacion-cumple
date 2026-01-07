@@ -9,7 +9,17 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    // Cargar fuentes de forma asíncrona para evitar el budget de css-inline-fonts
+    (function() {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;700&display=swap';
+      link.media = 'print';
+      link.onload = function() { this.media = 'all'; };
+      document.head.appendChild(link);
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>
