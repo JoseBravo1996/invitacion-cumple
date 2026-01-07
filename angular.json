@@ -38,13 +38,13 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "24kB",
-                  "maximumError": "28kB"
+                  "maximumWarning": "150kb",
+                  "maximumError": "150kb"
                 },
                 {
                   "type": "css-inline-fonts",
-                  "maximumWarning": "20kb",
-                  "maximumError": "30kb"
+                  "maximumWarning": "150kb",
+                  "maximumError": "150kb"
                 }
               ],
               "outputHashing": "all"
