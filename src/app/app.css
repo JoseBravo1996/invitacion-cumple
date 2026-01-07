@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;700&display=swap');
 
 * {
   margin: 0;
@@ -134,7 +134,7 @@ body {
 .circuit-label-text {
   color: #00ffff;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -391,7 +391,7 @@ body {
 .info-value {
   color: #ffffff;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1px;
   font-family: 'Rajdhani', sans-serif;
 }
@@ -455,7 +455,7 @@ body {
   color: #00ffff;
   font-family: 'Orbitron', monospace;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 1px;
   transition: all 0.3s ease;
   outline: none;
@@ -664,7 +664,7 @@ body {
 .success-text {
   color: #00ffff;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 2px;
   margin-bottom: 10px;
 }
@@ -693,7 +693,7 @@ body {
   color: #00ffff;
   font-family: 'Orbitron', monospace;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
