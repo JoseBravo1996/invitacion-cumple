@@ -33,6 +33,11 @@ export class App implements OnInit, OnDestroy {
     return this.asistencia === 'Si';
   }
 
+  // Verificar si es "Tal vez"
+  get talVez(): boolean {
+    return this.asistencia === 'TalVez';
+  }
+
   ngOnInit() {
     // Actualizar fecha cada segundo
     this.fechaInterval = setInterval(() => {

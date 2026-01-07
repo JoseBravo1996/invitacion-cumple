@@ -31,8 +31,8 @@
     <div class="circuit-row last">
       <span class="circuit-label-text">LAST TIME DEPARTED</span>
       <div class="circuit-digits amber-glow">
-        <span class="date-part">NOV 12</span>
-        <span class="time-part">1955 · 06:38</span>
+        <span class="date-part">ENERO 18</span>
+        <span class="time-part">1996 · 13:38</span>
       </div>
     </div>
     
@@ -52,11 +52,12 @@
     
     <div class="title-section">
       <h1 class="main-title">
-        <span class="title-line">¡VIAJE EN EL TIEMPO</span>
-        <span class="title-line">INVITADO!</span>
+        <span class="title-line">¡ESTÁS INVITADO A UN VIAJE EN EL TIEMPO!</span>
+        <span class="title-line title-subtitle">Destino final: mi cumpleaños número 30 🎂⚡</span>
       </h1>
       <div class="title-underline"></div>
-      <p class="subtitle">Where we're going, we don't need roads</p>
+      <p class="subtitle">Where we're going, we don't need roads…
+        we need to celebrate 30 years</p>
     </div>
 
     <div class="info-section">
@@ -94,7 +95,7 @@
       
       <form (ngSubmit)="confirmar()" class="rsvp-form">
         <div class="input-group">
-          <label class="input-label">NOMBRE DEL VIAJERO</label>
+          <label class="input-label">Nombre del viajero temporal</label>
           <input
             type="text"
             [(ngModel)]="nombre"
@@ -112,7 +113,7 @@
         </div>
 
         <div class="input-group">
-          <label class="input-label">ESTADO DEL VIAJE</label>
+          <label class="input-label">¿Te sumás al viaje?</label>
           <select 
             [(ngModel)]="asistencia" 
             name="asistencia" 
@@ -122,8 +123,9 @@
             #asistenciaInput
           >
             <option value="">Selecciona tu estado</option>
-            <option value="Si">🚗 Viaje temporal confirmado</option>
-            <option value="No">⏳ Atrapado en otra línea temporal</option>
+            <option value="Si">✔️ Confirmado</option>
+            <option value="TalVez">⏳ Tal vez</option>
+            <option value="No">❌ Me quedé en 1985</option>
           </select>
           <div class="input-glow"></div>
           <span class="validation-message" *ngIf="asistencia.length === 0 && nombre.trim().length > 0">
@@ -137,7 +139,7 @@
           [disabled]="!formularioValido || enviando"
           [class.disabled]="!formularioValido"
         >
-          <span class="btn-text" *ngIf="!enviando">ACTIVAR FLUX CAPACITOR</span>
+          <span class="btn-text" *ngIf="!enviando">🔥 ACTIVAR FLUX CAPACITOR 🔥</span>
           <span class="btn-text" *ngIf="enviando">PROCESANDO...</span>
           <div class="btn-glow"></div>
         </button>
@@ -153,9 +155,18 @@
       <button class="reset-btn" (click)="resetear()">ENVIAR OTRA CONFIRMACIÓN</button>
     </div>
 
+    <!-- Mensaje de Confirmación - Tal Vez -->
+    <div class="success-message tal-vez" *ngIf="enviado && talVez">
+      <div class="success-icon tal-vez-icon">⏳</div>
+      <h2 class="success-title tal-vez-title">RESPUESTA REGISTRADA</h2>
+      <p class="success-text">Tu respuesta "Tal vez" ha sido enviada</p>
+      <p class="success-subtext">¡Esperamos que puedas confirmar pronto! Te estaremos esperando 🚗⚡</p>
+      <button class="reset-btn" (click)="resetear()">ENVIAR OTRA CONFIRMACIÓN</button>
+    </div>
+
     <!-- Mensaje de Confirmación - No Asistencia -->
-    <div class="success-message no-asistencia" *ngIf="enviado && !vaAsistir">
-      <div class="success-icon no-asistencia-icon">⏳</div>
+    <div class="success-message no-asistencia" *ngIf="enviado && !vaAsistir && !talVez">
+      <div class="success-icon no-asistencia-icon">❌</div>
       <h2 class="success-title no-asistencia-title">LÍNEA TEMPORAL REGISTRADA</h2>
       <p class="success-text">Tu respuesta ha sido enviada</p>
       <p class="success-subtext">Lamentamos que no puedas asistir. ¡Esperamos verte en otra oportunidad!</p>
