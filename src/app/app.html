@@ -1,9 +1,4 @@
 <div class="main-container">
-  <!-- Fondo con efectos de partículas -->
-  <div class="stars"></div>
-  <div class="stars2"></div>
-  <div class="stars3"></div>
-  
   <!-- Panel de Circuitos de Tiempo -->
   <div class="time-circuit-panel">
     <div class="circuit-header">
@@ -81,7 +76,14 @@
         <span class="info-icon">📍</span>
         <div class="info-content">
           <span class="info-label">DESTINO</span>
-          <span class="info-value">El Salvador 4139, Jobs Palermo</span>
+          <a 
+            href="https://maps.app.goo.gl/hx3DTYLgSHhAg6mK6" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="info-value info-link"
+          >
+            El Salvador 4139, Jobs Palermo
+          </a>
         </div>
       </div>
     </div>
@@ -151,7 +153,17 @@
       <div class="success-icon">✓</div>
       <h2 class="success-title">¡VIAJE CONFIRMADO!</h2>
       <p class="success-text">Tu RSVP ha sido enviado al futuro</p>
-      <p class="success-subtext">Nos vemos en El Salvador 4139, Jobs Palermo</p>
+      <p class="success-subtext">
+        Nos vemos en 
+        <a 
+          href="https://maps.app.goo.gl/hx3DTYLgSHhAg6mK6" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="success-link"
+        >
+          El Salvador 4139, Jobs Palermo
+        </a>
+      </p>
       <button class="reset-btn" (click)="resetear()">ENVIAR OTRA CONFIRMACIÓN</button>
     </div>
 

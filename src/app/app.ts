@@ -44,20 +44,40 @@ export class App implements OnInit, OnDestroy {
       this.fechaActual = new Date();
     }, 1000);
 
-    // Crear partículas flotantes
-    this.particles = Array.from({ length: 20 }, (_, i) => i);
+    // Crear partículas cuadradas dispersas
+    this.particles = Array.from({ length: 80 }, (_, i) => i);
     
-    // Asignar posiciones aleatorias a las partículas después de que se rendericen
+    // Asignar posiciones y movimientos aleatorios
     setTimeout(() => {
-      this.particles.forEach((_, index) => {
-        const element = document.querySelector(`.particle:nth-child(${index + 1})`) as HTMLElement;
-        if (element) {
-          const randomX = Math.random() * 100 - 50;
-          const randomDelay = Math.random() * 5;
-          element.style.setProperty('--random', String(Math.random() * 2));
-          element.style.left = `${50 + randomX}%`;
-          element.style.animationDelay = `${randomDelay}s`;
-        }
+      const particleElements = document.querySelectorAll('.particle');
+      particleElements.forEach((element) => {
+        const el = element as HTMLElement;
+        
+        // Posición aleatoria en toda la pantalla
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        
+        // Movimientos suaves y aleatorios
+        const moveX = (Math.random() - 0.5) * 60; // -30px a 30px
+        const moveY = (Math.random() - 0.5) * 60;
+        const moveX2 = (Math.random() - 0.5) * 80;
+        const moveY2 = (Math.random() - 0.5) * 80;
+        const moveX3 = (Math.random() - 0.5) * 70;
+        const moveY3 = (Math.random() - 0.5) * 70;
+        
+        // Delay aleatorio para que no todas empiecen al mismo tiempo
+        const delay = Math.random() * 5;
+        
+        // Aplicar estilos
+        el.style.left = `${x}%`;
+        el.style.top = `${y}%`;
+        el.style.setProperty('--move-x', `${moveX}px`);
+        el.style.setProperty('--move-y', `${moveY}px`);
+        el.style.setProperty('--move-x2', `${moveX2}px`);
+        el.style.setProperty('--move-y2', `${moveY2}px`);
+        el.style.setProperty('--move-x3', `${moveX3}px`);
+        el.style.setProperty('--move-y3', `${moveY3}px`);
+        el.style.animationDelay = `${delay}s`;
       });
     }, 100);
   }
